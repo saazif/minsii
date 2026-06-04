@@ -9,7 +9,7 @@ const styles = {
   orb3: { top: "50%", left: "-15%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(0,180,255,0.08) 0%, transparent 70%)" },
   particlesContainer: { position: "absolute", inset: 0, pointerEvents: "none" },
   particle: { position: "absolute", background: "radial-gradient(circle, rgba(0,180,255,0.9), rgba(0,80,255,0.4))", borderRadius: "50%", filter: "blur(1px)" },
-  contentWrapper: { position: "relative", zIndex: 10, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 20px 100px 20px", maxWidth: "1200px", margin: "0 auto", textAlign: "center", width: "100%" },
+  contentWrapper: { position: "relative", zIndex: 10, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "20px 15px 40px 15px", maxWidth: "1200px", margin: "0 auto", textAlign: "center", width: "100%" },
   mainTitle: { fontFamily: "'Poppins', sans-serif", fontSize: "clamp(3.5rem, 12vw, 7rem)", fontWeight: 900, letterSpacing: "0.1em", marginBottom: "20px", background: "linear-gradient(135deg, #fff 0%, #00cfff 50%, #0066ff 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" },
   titleGlowLine: { height: "3px", width: "200px", background: "linear-gradient(90deg, transparent, #00aaff, transparent)", margin: "0 auto 30px auto", borderRadius: "2px", boxShadow: "0 0 20px rgba(0,170,255,0.8)" },
   featureCard: { position: "relative", marginBottom: "40px", maxWidth: "700px", width: "100%" },
@@ -18,7 +18,7 @@ const styles = {
   featuredMessage: { fontSize: "clamp(1.2rem, 4vw, 1.5rem)", color: "#cbd5e1", lineHeight: "1.8", fontWeight: 400, fontFamily: "'Poppins', sans-serif" },
   emphasizedText: { color: "#fff", fontWeight: 600, background: "linear-gradient(135deg, #00cfff, #0066ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", fontSize: "1.3rem", marginTop: "15px", display: "block" },
   buttonContainer: { display: "flex", justifyContent: "center", gap: "30px", marginBottom: "40px", flexWrap: "wrap", width: "100%" },
-  buttonBox: { position: "relative", flex: "1", minWidth: "200px", maxWidth: "280px" },
+  buttonBox: { position: "relative", flex: "1 1 100%", minWidth: "160px", maxWidth: "300px" },
   buttonBorder: { position: "absolute", inset: 0, border: "2px solid rgba(0,150,255,0.5)", borderRadius: "16px", background: "linear-gradient(135deg, rgba(0,100,255,0.1), rgba(0,180,255,0.1))", backdropFilter: "blur(10px)" },
   buttonContent: { position: "relative", padding: "25px 20px", borderRadius: "16px", zIndex: 1, cursor: "pointer", transition: "all 0.3s ease" },
   buttonLabel: { fontSize: "0.8rem", color: "#00aaff", textTransform: "uppercase", letterSpacing: "0.15em", fontWeight: 600, marginBottom: "12px", fontFamily: "'Poppins', sans-serif" },
@@ -32,8 +32,17 @@ const styles = {
   countdownNumber: { fontSize: "clamp(1.5rem, 4vw, 2rem)", fontWeight: 700, color: "#00cfff", fontFamily: "'Poppins', sans-serif", textShadow: "0 0 15px rgba(0,200,255,0.8)" },
   countdownItemLabel: { fontSize: "0.65rem", color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: "5px", fontWeight: 600 },
   countdownSeparator: { fontSize: "1.5rem", color: "#00aaff", opacity: 0.6, fontWeight: "bold" },
-  licenseCard: { position: "fixed", bottom: "20px", left: "50%", transform: "translateX(-50%)", background: "linear-gradient(135deg, rgba(0,80,255,0.2), rgba(0,180,255,0.2))", border: "1px solid rgba(0,180,255,0.4)", borderRadius: "12px", padding: "15px 25px", backdropFilter: "blur(10px)", zIndex: 15, maxWidth: "90%" },
-  licenseText: { fontSize: "0.75rem", color: "#64748b", letterSpacing: "0.05em", fontFamily: "'Courier Prime', monospace" },
+  licenseCard: {
+  position: "relative",
+  marginTop: "30px",
+  marginBottom: "20px",
+  background: "linear-gradient(135deg, rgba(0,80,255,0.2), rgba(0,180,255,0.2))",
+  border: "1px solid rgba(0,180,255,0.4)",
+  borderRadius: "12px",
+  padding: "15px 25px",
+  backdropFilter: "blur(10px)",
+  maxWidth: "90%"
+}, licenseText: { fontSize: "0.75rem", color: "#64748b", letterSpacing: "0.05em", fontFamily: "'Courier Prime', monospace" },
   pageTitle: { fontFamily: "'Poppins', sans-serif", fontSize: "clamp(2.5rem, 10vw, 4rem)", fontWeight: 900, color: "#fff", marginBottom: "40px", background: "linear-gradient(135deg, #00cfff 0%, #0066ff 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" },
   questionStep: { fontSize: "0.9rem", color: "#00aaff", marginBottom: "20px", fontWeight: 600 },
   questionContainer: { maxWidth: "600px", width: "100%" },
@@ -249,7 +258,7 @@ function EnergyOrb() {
   return (
     <canvas
       ref={canvasRef}
-      style={{ display: "block", width: "260px", height: "260px", marginBottom: "20px" }}
+      style={{ display: "block", width: "min(220px,70vw)", height: "min(220px,70vw)", marginBottom: "20px" }}
     />
   );
 }
